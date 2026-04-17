@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelcircuits Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gate">
+    <div class="gate-content">
+        <h2>────୨ৎ────ENTER ANGELCIRCUITS CYBER-SPACE────୨ৎ────</h2>
+        <div class="login-container">
+            <input type="password" id="pw" placeholder="Enter Password">
+            <button onclick="check()">Unlock</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <header class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="aboutArtist.html">⊹ ࣪ ˖ ꒰ঌ ໒꒱About Artist⊹ ࣪ ˖ ꒰ঌ ໒꒱</a></li>
+                <li><a href="commissions.html">⊹ ࣪ ˖ ꒰ঌ ໒꒱Portfolio⊹ ࣪ ˖ ꒰ঌ ໒꒱</a></li>
+                <li><a href="socials.html">⊹ ࣪ ˖ ꒰ঌ ໒꒱Socials⊹ ࣪ ˖ ꒰ঌ ໒꒱</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="row">
+        <div class="col-text">
+            <h1>Welcome to <br> Angelcircuits Webpage</h1>
+            <p>Portfolio 𓆩♡𓆪</p>
+        </div>
+        <div class="col-img">
+            <img src="harlowangel.png" alt="Angel Illustration">
+        </div>
+    </main>
+</div>
+
+<script>
+    (function() {
+        if (localStorage.getItem("isAllowed") === "true") {
+            document.write('<style>#gate { display: none !important; }</style>');
+            document.body.style.overflow = "auto";
+        }
+    })();
+
+    function check() {
+        var password = document.getElementById("pw").value;
+        if (password  === "harlow") {
+            localStorage.setItem("isAllowed", "true");
+            var gate = document.getElementById("gate");
+            gate.style.opacity = "0";
+            setTimeout(function() {
+                gate.remove();
+                document.body.style.overflow = "auto";
+            }, 600);
+        } else {
+            alert("Incorrect.");
+        }
+    }
+</script>
+</body>
+</html>
