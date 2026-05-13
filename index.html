@@ -8,16 +8,6 @@
 </head>
 <body>
 
-<div id="gate">
-    <div class="gate-content">
-        <h2>────୨ৎ────ENTER ANGELCIRCUITS CYBER-SPACE────୨ৎ────</h2>
-        <div class="login-container">
-            <input type="password" id="pw" placeholder="Enter Password">
-            <button onclick="check()">Unlock</button>
-        </div>
-    </div>
-</div>
-
 <div class="container">
     <header class="nav-bar">
         <nav>
@@ -38,29 +28,5 @@
         </div>
     </main>
 </div>
-
-<script>
-    (function() {
-        if (localStorage.getItem("isAllowed") === "true") {
-            document.write('<style>#gate { display: none !important; }</style>');
-            document.body.style.overflow = "auto";
-        }
-    })();
-
-    function check() {
-        var password = document.getElementById("pw").value;
-        if (password  === "harlow") {
-            localStorage.setItem("isAllowed", "true");
-            var gate = document.getElementById("gate");
-            gate.style.opacity = "0";
-            setTimeout(function() {
-                gate.remove();
-                document.body.style.overflow = "auto";
-            }, 600);
-        } else {
-            alert("Incorrect.");
-        }
-    }
-</script>
 </body>
 </html>
